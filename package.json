@@ -2,11 +2,15 @@
   "name": "aws-nodejs-first-contact",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "type": "module",
   "repository": "git@github.com:soydavidpaucar/aws-nodejs-first-contact.git",
   "author": "David Paucar <soydavidpaucar@gmail.com>",
   "license": "GPL-3.0-or-later",
   "private": true,
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "start:prod": "yarn build && node dist/app.js",
+    "start:dev": "npx nodemon app.ts"
+  },
   "dependencies": {
     "@types/mongodb": "^4.0.7",
     "express": "^4.18.2",
@@ -16,6 +20,7 @@
     "@types/express": "^4.17.14",
     "@types/node": "^18.11.0",
     "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   }
 }
